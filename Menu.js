@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { useState } from 'react';
+import Theme from './styles/Theme';
+import Elevation from 'react-native-elevation';
 
 export default function Menu({ navigation }) {
 	const [details, setDetails] = useState([
@@ -13,11 +15,12 @@ export default function Menu({ navigation }) {
 		navigation.navigate(id);
 	};
 	return (
-		<View style={styles.body}>
-			<View style={styles.sectionHeader} backgroundColor="white">
-				<Text style={styles.sectionTitle}>Project Taalika</Text>
+		<View style={Theme.screen} >
+			<View style={Theme.body}>
+			<View style={styles.sectionHeader} >
+				<Text style={styles.sectionTitle}>Taalika</Text>
 			</View>
-			<View style={{ flex: 3, backgroundColor: 'white' }}>
+			<View style={{ flex: 3}}>
 				{details.map((detail) => {
 					return (
 						<TouchableOpacity
@@ -31,17 +34,18 @@ export default function Menu({ navigation }) {
 					);
 				})}
 			</View>
-			<View style={{ flex: 3, backgroundColor: 'white' }}></View>
+			<View style={{ flex: 3, backgroundColor: Theme.body.color }}></View>
+			</View>
 		</View>
 	);
 }
 
 const styles = StyleSheet.create({
 	body: {
-		backgroundColor: 'white',
+		backgroundColor: Theme.body.backgroundColor,
 		flex: 1,
 		justifyContent: 'center',
-		backgroundColor: 'white',
+		
 	},
 	sectionHeader: {
 		flex: 2,
@@ -58,6 +62,9 @@ const styles = StyleSheet.create({
 		margin: 5,
 		padding: 10,
 		height: 80,
+		backgroundColor:"#ffffff",
+		borderRadius:20,
+		...Elevation[3],
 	},
 	row: {
 		fontSize: 35,
@@ -72,7 +79,7 @@ const styles = StyleSheet.create({
 
 	sectionTitle: {
 		fontSize: 45,
-		color: 'black',
+		color: Theme.textcol.color,
 		fontWeight: 'bold',
 		padding: 20,
 	},

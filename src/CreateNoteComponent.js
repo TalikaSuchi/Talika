@@ -6,6 +6,7 @@ const CreateNoteComponent = (props) => {
 	const [newNoteTitle, setNewNoteTitle] = useState(props.Title);
 
 	return (
+
 		<View style={styles.noteStyle}>
 			<TextInput
 				style={titleInputStyles()}
@@ -94,12 +95,14 @@ function titleInputStyles() {
 const styles = StyleSheet.create({
 	noteStyle: {
 		flex: 1,
+		
 		alignContent: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
 		alignSelf: 'center',
 		backgroundColor: '#eeeeee',
 		color: 'white',
+		borderRadius:30,
 	},
 });
 

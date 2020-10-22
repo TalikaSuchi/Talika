@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FlatList, View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import SingleNoteSummaryComponent from './SingleNoteSummaryComponent';
 import CreateNoteComponent from './CreateNoteComponent';
+import elevation from 'react-native-elevation';
+import Theme from '../styles/Theme'
 
 const NotesScreenComponent = () => {
 	const [data, setData] = useState([]);
@@ -33,12 +35,14 @@ const NotesScreenComponent = () => {
 		if (flag === 1)
 			//Edit an Old Note
 			return (
+				<View style={{height:'100%'}}>
 				<CreateNoteComponent
 					onCreateButtonPress={(note) => setCurrentNote(note)}
 					Title={currentNote.title}
 					Text={currentNote.text}
 					Key={currentNote.key}
 				/>
+				</View>
 			);
 		else if (flag === 2)
 			//Create a new Note
@@ -48,8 +52,8 @@ const NotesScreenComponent = () => {
 			return (
 				<View style={{ flex: 1 }}>
 					<View style={{ flex: 1 }}>
-						<Text style={{ textAlign: 'center', fontSize: 40, fontWeight: 'bold', top: 13, left: 2 }}>
-							Anusuchi
+						<Text style={{ color: Theme.themeCol.color ,textAlign: 'center', fontSize: 40, fontWeight: 'bold', top: 13, left: 2 }}>
+							Anu<Text style={{ color: Theme.textcol.color ,textAlign: 'center', fontSize: 40, fontWeight: 'bold', top: 13, left: 2 }}>suchi</Text>
 						</Text>
 					</View>
 					<View
@@ -59,7 +63,7 @@ const NotesScreenComponent = () => {
 					>
 						<FlatList
 							showsVerticalScrollIndicator={false}
-							style={{ flex: 1, flexWrap: 'wrap' }}
+							style={{ flex: 1, flexWrap: 'wrap' ,...elevation[2]}}
 							data={data}
 							numColumns={2}
 							renderItem={({ item }) => {
@@ -83,14 +87,19 @@ const NotesScreenComponent = () => {
 							}}
 							style={inputButton()}
 						>
-							<Text style={{ color: '#eeeeee', fontSize: 32, fontWeight: 'bold' }}>New Note</Text>
+							<Text style={{ color: '#eeeeee', fontSize: 32, fontWeight: 'bold' , ...elevation[4] }}>New Note</Text>
 						</TouchableOpacity>
 					</View>
 				</View>
 			);
 	};
 
-	return <View style={styles.viewProperties}>{showNoteScreen()}</View>;
+	return(
+	
+		 <View style={styles.viewProperties}>{showNoteScreen()}</View>
+
+		
+		 );
 };
 
 function inputButton() {
@@ -115,12 +124,15 @@ function inputButton() {
 const styles = StyleSheet.create({
 	viewProperties: {
 		flex: 1,
-		marginTop: 35,
-		width: 400,
+		margin:10,
+		width: '98%',
+		minHeight:"50%",
+		borderRadius:30,
 		alignSelf: 'center',
 	},
 	textProperties: {
 		fontSize: 24,
+		alignSelf:"center",
 	},
 });
 

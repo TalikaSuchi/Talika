@@ -1,8 +1,9 @@
 import { setStatusBarStyle, StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
-
+import Elevation from 'react-native-elevation';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput, FlatList } from 'react-native';
+import Theme from '../styles/Theme';
 
 export default class Subjects extends Component {
 	state = {
@@ -45,7 +46,7 @@ export default class Subjects extends Component {
 	foo = (props) => {
 		return (
 			<View style={Substyle.item}>
-				<Text style={Substyle.text}> {props.item.SubName} </Text>
+				<Text style={Theme.textcol}> {props.item.SubName} </Text>
 				<View style={{ flex: 1, flexDirection: 'row' }}>
 					<View style={Substyle.counter}>
 						<Text style={Substyle.text2}>Total</Text>
@@ -93,16 +94,22 @@ export default class Subjects extends Component {
 
 	render() {
 		return (
-			<View style={{ flex: 1 }}>
+
+
+			<View style={{ flex: 1, ...Elevation[4] }}>
 				<TextInput
-					placeholder="Enter the new Subject"
+					placeholder="Subject Name"
 					onChangeText={(data) => this.setState({ textInputholder: data })}
 					style={Substyle.textInput}
 					underlineColorAndroid="transparent"
 				/>
+
+				
 				<TouchableOpacity onPress={this.joinData} activeOpacity={0.7} style={Substyle.button}>
-					<Text style={Substyle.buttonText}> Add Subject </Text>
+					<Text style={Substyle.buttonText}>Add</Text>
 				</TouchableOpacity>
+
+
 				<View style={{ flex: 1 }}>
 					<FlatList
 						data={this.state.Data}
@@ -122,15 +129,15 @@ const Substyle = StyleSheet.create({
 	item: {
 		flex: 1,
 		margin: 2,
-		backgroundColor: '#eeeeee',
+		backgroundColor: '#efefef',
 		borderRadius: 10,
 		borderColor: 'black',
-		borderWidth: 2,
 		padding: 10,
 		flexWrap: 'wrap',
 		justifyContent: 'center',
 		alignItems: 'center',
-		elevation: 2,
+		...Elevation[4],
+		
 	},
 	text: {
 		alignSelf: 'flex-start',
@@ -194,8 +201,8 @@ const Substyle = StyleSheet.create({
 	textInput: {
 		textAlign: 'center',
 		height: 40,
-		width: '90%',
-		borderWidth: 1,
+		minWidth : '90%',
+		backgroundColor:"rgb(255,255,255)",
 		borderColor: '#212121',
 		borderRadius: 7,
 		marginTop: 2,
@@ -205,14 +212,13 @@ const Substyle = StyleSheet.create({
 		width: '90%',
 		height: 40,
 		padding: 10,
-		backgroundColor: '#212121',
 		borderRadius: 8,
 		marginTop: 10,
 		alignSelf: 'center',
 		marginBottom: 20,
 	},
 	buttonText: {
-		color: '#fff',
+		color: Theme.textcol.color,
 		textAlign: 'center',
 		fontWeight: 'bold',
 	},
@@ -220,20 +226,20 @@ const Substyle = StyleSheet.create({
 		padding: 10,
 		alignSelf: 'flex-start',
 		backgroundColor: '#32e0c4',
-		borderRadius: 8,
+		borderRadius: 20,
 		margin: 10,
-		borderWidth: 1,
+		
 		borderColor: '#212121',
-		elevation: 0.2,
+		elevation: 0.6,
 	},
 	Missed: {
 		padding: 10,
 		alignSelf: 'flex-start',
 		backgroundColor: '#0d7377',
-		borderRadius: 8,
+		borderRadius: 20,
 		margin: 10,
-		borderWidth: 1,
+		
 		borderColor: '#212121',
-		elevation: 0.2,
+		elevation: 0.6,
 	},
 });

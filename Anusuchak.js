@@ -3,13 +3,16 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Header from './components/Header';
 import Subjects from './components/Subjects';
+import Theme from './styles/Theme';
 
 export default function Anusuchak() {
 	return (
-		<View style={styles.BG}>
-			<Header />
-			<View style={styles.content}>
-				<Subjects />
+		<View style={Theme.screen}>
+			<View style={Theme.body}>
+				<Header />
+				<View style={styles.content}>
+					<Subjects />
+				</View>
 			</View>
 		</View>
 	);
@@ -17,7 +20,7 @@ export default function Anusuchak() {
 
 const styles = StyleSheet.create({
 	BG: {
-		backgroundColor: 'white',
+		backgroundColor: Theme.body.backgroundColor,
 		flex: 1,
 	},
 	content: {

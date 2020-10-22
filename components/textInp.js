@@ -164,9 +164,9 @@ const InputTask = props => {
                                     <Button color={props.bgStyle.themeCol.color} style={Style.button} title="End Date/time" onPress={enddatePress} />
                                 </View>
 
-                                <DateTimePickerModal isDarkModeEnabled={true} mode='datetime' isVisible={datestate} onConfirm={handleConfirm} onCancel={hideDatePicker} />
+                                <DateTimePickerModal isDarkModeEnabled={false} mode='datetime' isVisible={datestate} onConfirm={handleConfirm} onCancel={hideDatePicker} />
 
-                                <DateTimePickerModal isDarkModeEnabled={true} mode='datetime' isVisible={enddatestate} onConfirm={handleendConfirm} onCancel={hideendDatePicker} />
+                                <DateTimePickerModal isDarkModeEnabled={false} mode='datetime' isVisible={enddatestate} onConfirm={handleendConfirm} onCancel={hideendDatePicker} />
 
 
                             </View>
