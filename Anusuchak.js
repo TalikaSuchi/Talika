@@ -1,8 +1,8 @@
 import { StatusBa } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Header from './Components/Header';
-import Subjects from './Components/Subjects';
+import Header from './components/Header';
+import Subjects from './components/Subjects';
 
 export default function Anusuchak() {
 	return (

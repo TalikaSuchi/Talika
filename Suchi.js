@@ -2,8 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, ImageBackground, TouchableHighlight, Text, View, Button, FlatList } from 'react-native';
 
-import InputTask from './comps/textInp';
-import GoalItem from './comps/goalItem';
+import InputTask from './components/textInp';
+import GoalItem from './components/goalItem';
 import Elevation from 'react-native-elevation';
 
 const bg2 = require('./assets/baground2.jpg');
