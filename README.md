@@ -1,7 +1,8 @@
 # Talika Suchi
 
 It is a React Native Expo Cli app
-- npm starting scripts
-- use ` npm start `
+- yarn starting scripts
+- use ` yarn install `
+- use `yarn start `
 <br>
 *no react_modules* component so create an app first and use those components.
