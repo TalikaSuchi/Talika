@@ -6,6 +6,7 @@ import InputTask from './components/textInp';
 import GoalItem from './components/goalItem';
 import Elevation from 'react-native-elevation';
 
+
 const bg2 = require('./assets/baground2.jpg');
 
 export default function Suchi() {
@@ -30,9 +31,36 @@ export default function Suchi() {
 		return () => clearInterval(secTimer);
 	}, []);
 
+
+
+	// const storeData = async (value) => {
+	// 	try {
+	// 	  const jsonValue = JSON.stringify(value)
+	// 	  await AsyncStorage.setItem('Reminder', jsonValue)
+	// 	} catch (e) {
+
+	// 		console.error("Could not save the data");
+
+	// 	}
+	//   }
+
+	//   const getData = async () => {
+	// 	try {
+	// 	  const jsonValue = await AsyncStorage.getItem('@storage_Key')
+	// 	  return jsonValue != null ? JSON.parse(jsonValue) : null;
+	// 	} catch(e) {
+	// 	  // error reading value
+	// 	}
+	//   }
+	  
+	  
+
+
 	//Adding the task in the list
 	const AddHandler = (Task) => {
 		TaskList.push(Task);
+
+		//storeData(TaskList);
 
 		setTaskState(false);
 	};

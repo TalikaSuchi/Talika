@@ -21,6 +21,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This is a colorabtive effort between Yash Tripathi(Suchi) Hitesh Goyal (Notes), Ujwal(Notes and Attendence) ,Jagrit(Style and notes),Ayush (Attendence manager)"
   }
 }
