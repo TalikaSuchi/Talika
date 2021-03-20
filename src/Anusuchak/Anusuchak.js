@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Header from "../../components/Header";
-import Subjects from "../../components/Subjects";
+import Subjects from "./Subjects";
 import Theme from "../../styles/Theme";
 
 export default function Anusuchak() {

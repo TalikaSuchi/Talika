@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import Elevation from 'react-native-elevation';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput, FlatList } from 'react-native';
-import Theme from '../styles/Theme';
+import Theme from '../../styles/Theme';
 
 export default class Subjects extends Component {
 	state = {

@@ -3,7 +3,7 @@ import { FlatList, View, StyleSheet, TouchableOpacity, Text } from 'react-native
 import SingleNoteSummaryComponent from './SingleNoteSummaryComponent';
 import CreateNoteComponent from './CreateNoteComponent';
 import elevation from 'react-native-elevation';
-import Theme from '../styles/Theme'
+import Theme from '../../styles/Theme'
 
 const NotesScreenComponent = () => {
 	const [data, setData] = useState([]);

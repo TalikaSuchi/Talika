@@ -14,14 +14,14 @@ import InputTask from "../../components/textInp";
 import GoalItem from "../../components/goalItem";
 import Elevation from "react-native-elevation";
 
-const bg2 = require("./assets/baground2.jpg");
+const bg2 = require("../../assets/baground1.jpg");
 
 export default function Suchi() {
   const [TaskState, setTaskState] = useState(false);
   const [TaskState1, setTaskState1] = useState(false);
   const [bg1Visiable, setBg1Visiablity] = useState(false);
   const [bg2Visiable, setBg2Visiablity] = useState(false);
-  const [BG, setBG] = useState(require("./assets/baground1.jpg"));
+  const [BG, setBG] = useState(require("../../assets/baground1.jpg"));
   const taskStateHandler = () => {
     setTaskState(true);
   };
@@ -75,15 +75,15 @@ export default function Suchi() {
     if (bg1Visiable) {
       setBg1Visiablity(false);
       setBg2Visiablity(true);
-      setBG(require("./assets/baground2.jpg"));
+      setBG(require("../../assets/baground2.jpg"));
     } else if (bg2Visiable) {
       setBg1Visiablity(false);
       setBg2Visiablity(false);
-      setBG(require("./assets/baground1.jpg"));
+      setBG(require("../../assets/baground1.jpg"));
     } else {
       setBg1Visiablity(true);
       setBg2Visiablity(false);
-      setBG(require("./assets/baground1.jpg"));
+      setBG(require("../../assets/baground1.jpg"));
     }
   };
 
